@@ -1,0 +1,3 @@
+C:/Users/arsha/Documents/fun/gits/small-transformer/build/CMakeFiles/bindings.dir
+C:/Users/arsha/Documents/fun/gits/small-transformer/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/arsha/Documents/fun/gits/small-transformer/build/CMakeFiles/ZERO_CHECK.dir

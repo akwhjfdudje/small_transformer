@@ -1,0 +1,44 @@
+# CMake generation dependency list for this directory.
+C:/Program Files/CMake/share/cmake-3.30/Modules/CMakeCUDAInformation.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/CMakeCXXInformation.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/CMakeCommonLanguageInclude.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/CMakeGenericSystem.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/CMakeInitializeConfigs.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/CMakeLanguageInformation.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/CMakeRCInformation.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/CMakeSystemSpecificInformation.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/CMakeSystemSpecificInitialize.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/CheckCXXCompilerFlag.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/CheckCXXSourceCompiles.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/Compiler/CMakeCommonCompilerMacros.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/Compiler/MSVC-CXX.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/Compiler/MSVC.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/Compiler/NVIDIA-CUDA.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/Compiler/NVIDIA.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/FindPackageMessage.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/FindPython/Support.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/FindPython3.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/Internal/CheckCompilerFlag.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/Internal/CheckFlagCommonConfig.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/Internal/CheckSourceCompiles.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/Platform/Windows-Initialize.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/Platform/Windows-MSVC-CXX.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/Platform/Windows-MSVC.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/Platform/Windows-NVIDIA-CUDA.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/Platform/Windows.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/Platform/WindowsPaths.cmake
+C:/Users/arsha/AppData/Local/Programs/Python/Python314/Lib/site-packages/torch/share/cmake/Caffe2/Caffe2Config.cmake
+C:/Users/arsha/AppData/Local/Programs/Python/Python314/Lib/site-packages/torch/share/cmake/Caffe2/Caffe2Targets-release.cmake
+C:/Users/arsha/AppData/Local/Programs/Python/Python314/Lib/site-packages/torch/share/cmake/Caffe2/Caffe2Targets.cmake
+C:/Users/arsha/AppData/Local/Programs/Python/Python314/Lib/site-packages/torch/share/cmake/Caffe2/public/mkl.cmake
+C:/Users/arsha/AppData/Local/Programs/Python/Python314/Lib/site-packages/torch/share/cmake/Caffe2/public/mkldnn.cmake
+C:/Users/arsha/AppData/Local/Programs/Python/Python314/Lib/site-packages/torch/share/cmake/Caffe2/public/utils.cmake
+C:/Users/arsha/AppData/Local/Programs/Python/Python314/Lib/site-packages/torch/share/cmake/Torch/TorchConfig.cmake
+C:/Users/arsha/AppData/Local/Programs/Python/Python314/Lib/site-packages/torch/share/cmake/Torch/TorchConfigVersion.cmake
+C:/Users/arsha/Documents/fun/gits/small-transformer/CMakeLists.txt
+C:/Users/arsha/Documents/fun/gits/small-transformer/build/CMakeFiles/3.30.0/CMakeCUDACompiler.cmake
+C:/Users/arsha/Documents/fun/gits/small-transformer/build/CMakeFiles/3.30.0/CMakeCXXCompiler.cmake
+C:/Users/arsha/Documents/fun/gits/small-transformer/build/CMakeFiles/3.30.0/CMakeRCCompiler.cmake
+C:/Users/arsha/Documents/fun/gits/small-transformer/build/CMakeFiles/3.30.0/CMakeSystem.cmake
