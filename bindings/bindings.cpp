@@ -1,4 +1,6 @@
 #include <torch/extension.h>
+#include <ATen/ATen.h>
+#include <pybind11/pybind11.h>
 #include "linalg/linalg.cuh"
 #include "activate/activate.cuh"
 #include "arith/arith.cuh"
