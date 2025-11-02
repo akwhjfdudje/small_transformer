@@ -7,8 +7,16 @@ This project contains an inference-based language model, using some of my own ha
 To build the PyTorch extension:
 
 ```
-cmake -S . -B build \
--DCMAKE_PREFIX_PATH="$(python -c 'import torch; print(torch.utils.cmake_prefix_path)')" \
--DPython3_ROOT_DIR="<path/to/python>"
--DTORCH_PATH="<path/to/pytorch>"
+python setup.py build_ext --inplace
+cp <path/to/cuda_kernels/shared/lib> .
+```
+
+This will create the extension in the current directory
+
+## Running
+
+To train the model:
+
+```
+python train.py
 ```

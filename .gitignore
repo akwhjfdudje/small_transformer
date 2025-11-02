@@ -1,1 +1,5 @@
 build/
+*.pyd
+*.dll
+bindings.egg-info/
+model/__pycache__/

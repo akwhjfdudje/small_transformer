@@ -1,3 +1,4 @@
+import os
 from setuptools import setup
 from torch.utils.cpp_extension import BuildExtension, CUDAExtension
 
@@ -10,10 +11,12 @@ setup(
                 "bindings/bindings.cpp",
             ],
             include_dirs=[
-                "../cuda_kernels/include",
+                os.path.abspath("../cuda_kernels/include"),
             ],
             libraries=["cuda_kernels"],
-            library_dirs=["../cuda_kernels/build/Release"],
+            library_dirs=[
+                os.path.abspath("../cuda_kernels/build/Release"),
+            ],
             extra_compile_args={
                 "cxx": ["-O3"],
                 "nvcc": ["--use_fast_math", "-O3"],
