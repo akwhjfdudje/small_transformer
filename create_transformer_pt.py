@@ -8,7 +8,7 @@ device = "cuda" if torch.cuda.is_available() else "cpu"
 vocab_size = 128       #simple byte-level vocab
 seq_len = 32
 batch_size = 16
-epochs = 300
+epochs = 3000
 lr = 3e-4
 
 # Prepare a simple corpus 
