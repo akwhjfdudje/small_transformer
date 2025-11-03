@@ -19,7 +19,7 @@ A model requires a dataset of text to use:
 
 To do so, run this in this directory:
 ```
-python generators/*.py # outputs a file with lines in data/
+python generators/*.py 
 ```
 
 To train and save a model:
