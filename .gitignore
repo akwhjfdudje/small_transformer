@@ -4,3 +4,4 @@ build/
 bindings.egg-info/
 model/__pycache__/
 *.pt
+data/

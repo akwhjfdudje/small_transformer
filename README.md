@@ -15,8 +15,21 @@ This will create the extension in the current directory
 
 ## Running
 
-To train the model:
+A model requires a dataset of text to use:
+
+To do so, run this in this directory:
+```
+python generators/*.py # outputs a file with lines in data/
+```
+
+To generate a model:
 
 ```
-python train.py
+python create_transformer_*.py
+```
+
+The `evaluate.py` script takes transformer and vocabulary checkpoints, and will give a small prompt to input text:
+
+```
+python evaluate.py
 ```

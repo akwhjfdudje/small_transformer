@@ -12,20 +12,12 @@ D_MODEL = 128
 HEADS = 4
 D_FF = 256
 LAYERS = 2
-EPOCHS = 100
+EPOCHS = 5
 LR = 3e-4
 
 # Load or create dataset 
-corpus = [
-    "to be or not to be that is the question",
-    "the quick brown fox jumps over the lazy dog",
-    "a journey of a thousand miles begins with a single step",
-    "all that glitters is not gold",
-    "the pen is mightier than the sword",
-    "knowledge is power",
-    "time and tide wait for no man",
-    "practice makes perfect",
-]
+with open("data/fiction_corpus.txt", "r", encoding="utf-8") as f:
+    corpus = [line.strip() for line in f if line.strip()]
 
 # Tokenizer 
 tokenizer = SimpleTokenizer()

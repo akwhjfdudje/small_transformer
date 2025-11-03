@@ -21,7 +21,7 @@ while True:
     prompt = torch.tensor([tokenizer.encode(prompt_text)], device=device)
 
     # Generate
-    max_new_tokens = 20
+    max_new_tokens = 32
     for _ in range(max_new_tokens):
         logits = model(prompt)
         next_token = torch.argmax(logits[:, -1, :], dim=-1, keepdim=True)
@@ -30,5 +30,5 @@ while True:
     # Decode output
     generated = tokenizer.decode(prompt[0].tolist())
     print()
-    print("<< ", generated)
+    print("<<", generated)
 
