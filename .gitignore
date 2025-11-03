@@ -3,3 +3,4 @@ build/
 *.dll
 bindings.egg-info/
 model/__pycache__/
+*.pt
