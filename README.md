@@ -22,10 +22,10 @@ To do so, run this in this directory:
 python generators/*.py # outputs a file with lines in data/
 ```
 
-To generate a model:
+To train and save a model:
 
 ```
-python create_transformer_*.py
+python train.py
 ```
 
 The `evaluate.py` script takes transformer and vocabulary checkpoints, and will give a small prompt to input text:
