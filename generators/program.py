@@ -1,18 +1,4 @@
-#!/usr/bin/env python3
-"""
-technical_corpus.py
-
-Generates a 3000-line corpus of programming & technical text that mixes:
-- short prose (design notes, explanations, best practices)
-- single-line code snippets (Python, C/C++, Bash, CUDA)
-- small algorithm descriptions and API-like lines
-- one-liner commands and config examples
-
-Writes to data/corpus.txt (creates data/ directory if needed).
-"""
-
-import os
-import random
+import os, random
 
 OUT_DIR = "data"
 OUT_FILE = os.path.join(OUT_DIR, "program_corpus.txt")

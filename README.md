@@ -7,8 +7,8 @@ This project contains an inference-based language model, using some of my own ha
 To build the PyTorch extension:
 
 ```
-python setup.py build_ext --inplace
 cp <path/to/cuda_kernels/shared/lib> .
+python setup.py build_ext --inplace
 ```
 
 This will create the extension in the current directory
