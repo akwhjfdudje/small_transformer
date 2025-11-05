@@ -1,13 +1,12 @@
 import torch
 from model.transformer import MiniTransformer
-from model.tokenizer import SimpleTokenizer
+from model.tokenizer import SPTokenizer 
 
+vocab_size = 16000
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
-# Load vocab + tokenizer
-vocab = torch.load("vocab.pt")
-tokenizer = SimpleTokenizer(vocab)
-vocab_size = len(vocab)
+# Load tokenizer
+tokenizer = SPTokenizer("tokenizer")
 
 # Load model
 model = MiniTransformer(vocab_size).to(device)
