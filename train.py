@@ -16,7 +16,7 @@ EPOCHS = 5
 LR = 3e-4
 
 # Load or create dataset 
-with open("data/fiction_corpus.txt", "r", encoding="utf-8") as f:
+with open("data/gutenberg/132.txt", "r", encoding="utf-8") as f:
     corpus = [line.strip() for line in f if line.strip()]
 
 # Tokenizer 
