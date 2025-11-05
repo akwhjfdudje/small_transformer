@@ -33,3 +33,7 @@ The `evaluate.py` script takes transformer and vocabulary checkpoints, and will 
 ```
 python evaluate.py
 ```
+
+## Bugs
+
+Currently, `evaluate.py` only takes a certain number of tokens before crashing the kernel.
