@@ -2,7 +2,7 @@ import torch
 from model.transformer import MiniTransformer
 from model.tokenizer import SPTokenizer 
 
-vocab_size = 16000
+vocab_size = 1116
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
 # Load tokenizer

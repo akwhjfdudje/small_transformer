@@ -3,6 +3,7 @@ import torch.nn.functional as F
 from torch.utils.data import DataLoader, Dataset
 from model.transformer import MiniTransformer
 from model.tokenizer import SPTokenizer
+import sys
 
 # Config 
 device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -14,15 +15,18 @@ D_FF = 256
 LAYERS = 2
 EPOCHS = 5
 LR = 3e-4
+DATA_FILE = str(sys.argv[1])
 
 # Load or create dataset 
-with open("data/opensub/en/en.txt", "r", encoding="utf-8") as f:
+with open(DATA_FILE, "r", encoding="utf-8") as f:
     corpus = [line.strip() for line in f if line.strip()]
 
+vocab_size = 1116
 # Tokenizer 
 tokenizer = SPTokenizer(
     model_dir="tokenizer",
-    dataset_path="data/opensub/en/en.txt"  
+    vocab_size=vocab_size,
+    dataset_path=DATA_FILE
 )
 
 encoded = [torch.tensor(tokenizer.encode(text)) for text in corpus]
@@ -47,7 +51,6 @@ dataset = WordDataset(data, SEQ_LEN)
 loader = DataLoader(dataset, batch_size=BATCH_SIZE, shuffle=True)
 
 # Model 
-vocab_size = 16000
 model = MiniTransformer(vocab_size, D_MODEL, LAYERS, HEADS, D_FF).to(device)
 optimizer = torch.optim.AdamW(model.parameters(), lr=LR)
 
