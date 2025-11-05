@@ -1,5 +1,8 @@
 import os, torch
-os.add_dll_directory(os.path.join(torch.__path__[0], 'lib'))
+if os.name == 'nt':
+    os.add_dll_directory(os.path.join(torch.__path__[0], 'lib'))
+else:
+    os.path.join(torch.__path__[0], 'lib')
 import bindings as tb
 
 class ScaledDotProductAttention(torch.nn.Module):
