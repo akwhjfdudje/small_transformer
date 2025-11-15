@@ -13,26 +13,46 @@ torch::Tensor relu_binding(torch::Tensor input) {
 }
 
 torch::Tensor batched_matmul_binding(torch::Tensor A, torch::Tensor B) {
-    TORCH_CHECK(A.is_cuda() && B.is_cuda());
-    TORCH_CHECK(A.dim() == 3 || A.dim() == 4, "A must be 3D or 4D for batched matmul");
-    
-    int batch = (A.dim() == 4) ? A.size(0)*A.size(1) : A.size(0); // flatten batch & heads if 4D
-    int N = A.size(A.dim()-2);   // rows
-    int M = B.size(B.dim()-1);   // cols
+    TORCH_CHECK(A.is_cuda() && B.is_cuda(), "Tensors must be CUDA");
+    TORCH_CHECK(A.dim() == 3 || A.dim() == 4, "A must be 3D or 4D");
+    TORCH_CHECK(B.dim() == A.dim(), "A and B must have same rank");
 
-    // flatten last two dims for kernel
-    auto A_flat = A.contiguous().view({batch, N, A.size(A.dim()-1)});
-    auto B_flat = B.contiguous().view({batch, B.size(B.dim()-2), M});
+    // Shapes:
+    // A: (batch, M, K)
+    // B: (batch, K, N)
+    // or if 4D:
+    // A: (batch, heads, M, K)
+    // B: (batch, heads, K, N)
 
-    auto C = torch::empty({batch, N, M}, A.options());
+    bool is4D = (A.dim() == 4);
 
-    batchedMatrixMul(A_flat.data_ptr<float>(), B_flat.data_ptr<float>(), C.data_ptr<float>(), N, batch);
+    int batch = is4D ? A.size(0) * A.size(1) : A.size(0);
+    int M     = A.size(A.dim() - 2);
+    int K     = A.size(A.dim() - 1);
+    int KB    = B.size(B.dim() - 2); // must equal K
+    int N     = B.size(B.dim() - 1);
 
-    // reshape back if original was 4D
-    if (A.dim() == 4) {
-        int heads = A.size(1);
-        int T = A.size(2);
-        C = C.view({A.size(0), heads, T, T});
+    TORCH_CHECK(K == KB, "Inner dimensions must match (A[*,*,", K, "] vs B[*,", KB, ",*])");
+
+    // Flatten batch dimension if 4D:
+    auto A_flat = A.contiguous().view({batch, M, K});
+    auto B_flat = B.contiguous().view({batch, K, N});
+
+    auto C = torch::empty({batch, M, N}, A.options());
+
+    // Call updated CUDA kernel
+    batchedMatrixMul(
+        A_flat.data_ptr<float>(),
+        B_flat.data_ptr<float>(),
+        C.data_ptr<float>(),
+        M, K, N, batch
+    );
+
+    // If original was 4D, restore shape:
+    if (is4D) {
+        int outerBatch = A.size(0);
+        int heads      = A.size(1);
+        C = C.view({outerBatch, heads, M, N});
     }
 
     return C;
