@@ -29,13 +29,6 @@ class ScaledDotProductAttention(torch.nn.Module):
 
         # scores_flat: [B*H, T, T]
         scores_flat = tb.batched_matmul(Q_flat, K_flat_T)
-
-        # Odd CUDA bug, appears to crash when too
-        # many tokens are provided to the model
-        # in evaluation mode, pain point appears 
-        # here.
-        #
-        # TODO: figure out what's going on
         scores_flat = scores_flat / self.scale
 
         # Apply softmax along last dim
